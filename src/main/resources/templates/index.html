@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html xmlns:th="http://thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Práctica</title>
+        <meta charset="UTF-8"/>
     </head>
     <body>
-        <div>Practica 01</div>
+        <h1>Listado de Estados</h1>
+        
+        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <div th:if="${estados !=null and !estados.empty}">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Capital</th>
+                    <th>Población</th>
+                    <th>Posee Costas</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estado : ${estados}">
+                    <td th:text="${estado.nombre}"></td>
+                    <td th:text="${estado.capital}"></td>
+                    <td th:text="${estado.poblacion}"></td>
+                    <td th:text="${estado.posee_costas}"></td>
+                    <td><a th:href="@{/eliminarEstado/} + ${estado.idEstado}">Eliminar</a> </td>
+                    <td><a th:href="@{/modificarEstado/} + ${estado.idEstado}">Modificar</a> </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+        <div th:if="${estados ==null or estados.empty}">
+            No tenemos lista de estados que mostrar...
+        </div>
+
     </body>
 </html>
