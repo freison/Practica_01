@@ -17,6 +17,9 @@ public class IndexController {
     
     @GetMapping("/")
     public String inicio(Model model){
+        var estados = estadoService.getEstados();
+        
+        model.addAttribute("estados", estados);
         return "index";
     }
 }
