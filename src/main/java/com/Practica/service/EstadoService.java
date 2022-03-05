@@ -12,7 +12,7 @@ public interface EstadoService {
     
     public void delete(Estado estado);
     
-    public Estado getCliente(Estado estado);
+    public Estado getEstado(Estado estado);
     
     
 }

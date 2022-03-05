@@ -11,29 +11,29 @@ import org.springframework.stereotype.Service;
 public class EstadoServiceImpl implements EstadoService {
 
     @Autowired
-    private EstadoDao clienteDao;
+    private EstadoDao estadoDao;
     
     @Override
-    public List<Estado> getClientes() {
+    public List<Estado> getEstados() {
         return (List<Estado>)estadoDao.findAll();
         
     }
 
     @Override
     public void save(Estado estado) {
-        clienteDao.save(estado);
+        estadoDao.save(estado);
         
     }
 
     @Override
     public void delete(Estado estado) {
-        clienteDao.delete(estado);
+        estadoDao.delete(estado);
         
     }
 
     @Override
     public Estado getEstado(Estado estado) {
-        return clienteDao.findById(estado.getId*******Cliente()).orElse(null);
+        return estadoDao.findById(estado.getIdEstado()).orElse(null);
         
     }
     
