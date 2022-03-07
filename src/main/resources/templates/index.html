@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Práctica</title>
         <meta charset="UTF-8"/>
@@ -25,7 +25,7 @@
                     <td th:text="${estado.nombre}"></td>
                     <td th:text="${estado.capital}"></td>
                     <td th:text="${estado.poblacion}"></td>
-                    <td th:text="${estado.posee_costas}"></td>
+                    <td th:text="${estado.poseeCostas} ? 'Posee' : 'No Posee'"></td>
                     <td><a th:href="@{/eliminarEstado/} + ${estado.idEstado}">Eliminar</a> </td>
                     <td><a th:href="@{/modificarEstado/} + ${estado.idEstado}">Modificar</a> </td>
                 </tr>

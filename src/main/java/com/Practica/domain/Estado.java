@@ -22,6 +22,7 @@ public class Estado implements Serializable {
     private String nombre;
     private String capital;
     private long poblacion;
+    
     private boolean poseeCostas;
     
     public Estado() {
