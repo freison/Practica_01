@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlsn="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Edit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section>
+            <h1>Datos de Estado</h1>
+            <a th:href="@{/}">Regresar</a>
+            
+            <form th:action="@{/guardarEstado}"
+                  method="post"
+                  th:object="${estado}">
+                <input type="hidden" name="idEstado" th:field="*{idEstado}"/>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" th:field="*{nombre}"/>
+                <br/>
+                
+                <label for="capital">Capital:</label>
+                <input type="text" name="capital" th:field="*{capital}"/>
+                <br/>
+                
+                <label for="poblacion">Poblacion:</label>
+                <input type="number" name="poblacion" th:field="*{poblacion}"/>
+                <br/>
+                
+                <input type="checkbox" value=true checked/>
+                <br/>
+                <input type="submit" name="guardar" value="Guardar"/>
+            </form>
+        </section>
+    </body>
+</html>
