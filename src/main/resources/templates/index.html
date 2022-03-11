@@ -3,11 +3,12 @@
     <head>
         <title>Práctica</title>
         <meta charset="UTF-8"/>
+        <link href="css/estilos1.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Listado de Estados</h1>
         
-        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <a th:href="@{/nuevoEstado}" class="btn">Nuevo Estado</a>
         <div th:if="${estados !=null and !estados.empty}">
         <table border="1">
             <thead>
